@@ -98,7 +98,7 @@ importData(type = "DSN", odbc = "HTLN_wetlands", data_type = "vibi") # equivalen
 <span style='color:#1942B5;'><b>Option 2.</b> Import data from a specified database.</span></p>
 ```{r, results = 'hide'}
 importData(type ='dbfile',
-   filepath = 'C:/Users/KMMiller/OneDrive - DOI/MWR/HTLN_wetlands/HTLNwetlands3.4.6.accdb')
+   filepath = 'C:/Users/KMMiller/OneDrive - DOI/MWR/HTLN_wetlands/HTLNwetlands3.5.1.accdb')
 ```
 
 Additional import options will be added as the data package is completed for VIBI, and as ORAM and hydrology import features are added, including the ability to export views as csvs and/or a zipped file containing csvs.
