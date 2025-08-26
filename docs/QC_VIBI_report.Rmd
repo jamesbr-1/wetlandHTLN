@@ -7,7 +7,7 @@ output:
       in_header: "header_manual.html"
 
 params:
-  year_curr: 2023 # Current year of sampling
+  year_curr: 2025 # Current year of sampling
   all_years: FALSE # If FALSE, only reports on year_curr; TRUE reports on all years
   spp_list: "DB" # If FQAI, matches species in database against OH EPA spp. list. If "DB", matches against tlu_WetlndSpeciesList.    As of 20250606, stick with "DB" until a new FQAI list is published. 
   

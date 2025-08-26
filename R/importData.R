@@ -71,7 +71,7 @@ importData <- function(type = 'DSN', odbc = "HTLN_wetlands", filepath = NA, new_
   }
 
   #---- Bug handling ----
-  # matche arguments
+  # match arguments
   type <- match.arg(type, c("DSN", "dbfile", "csv", "zip"))
   stopifnot(class(new_env) == 'logical')
   data_type <- match.arg(data_type, c("vibi")) #+++ Add oram and all when they're enabled ++++
@@ -209,7 +209,7 @@ importData <- function(type = 'DSN', odbc = "HTLN_wetlands", filepath = NA, new_
   loc6 <- loc5 |> filter(FeatureTypes %in% "VIBIplotID")
 
   keep_cols <- c("WetlandName", "LocationID", "FeatureTypes", "FeatureID", "Park",
-                 "County", "TotalMods", "InternMods", "PlotConfig", "AreaHA",
+                 "County", "TotalMods", "IntensMods", "PlotConfig", "AreaHA",
                  "X1oPlants", "Centerline", "X1oHGM", "Directions", "Latitude",
                  "Longitude", "SampleType", "AccessPermission", "WetlandSize",
                  "EstablishmentDate", "DomVegID", "HGM_ID", "SurveyType", "Mod_Desc",
@@ -252,7 +252,7 @@ importData <- function(type = 'DSN', odbc = "HTLN_wetlands", filepath = NA, new_
   # Column names to order by/include for each view
   loc_cols <- c("LocationID", "FeatureID", "Park", "County", "PeriodYear",
                 "SampleDate", "SampleYear", "Latitude", "Longitude",
-                "TotalMods", "InternMods", "PlotConfig",
+                "TotalMods", "IntensMods", "PlotConfig",
                 "AreaHA", "X1oPlants", "X1oHGM", "DomVegID", "HGM_ID",
                 "Mod_Desc", "DomVeg_Lev1", "DomVeg_Lev2", "DomVeg_Lev3", "SurveyType")
 

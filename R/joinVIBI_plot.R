@@ -89,7 +89,7 @@ joinVIBI_plot <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%
            error = function(e){stop("tlu_WetlndSpeciesList not found. Please run importData() first.")})
 
   # Compile the loc/visit table to left-join with final results
-  plots_abbr <- plots[,c("LocationID", "FeatureTypes", "FeatureID", "Park", "County", "TotalMods", "InternMods",
+  plots_abbr <- plots[,c("LocationID", "FeatureTypes", "FeatureID", "Park", "County", "TotalMods", "IntensMods",
                          "PlotConfig", "AreaHA",
                          "X1oPlants", "X1oHGM", "DomVegID", "HGM_ID",
                          "DomVeg_Lev1", "DomVeg_Lev2", "DomVeg_Lev3")]
@@ -101,7 +101,7 @@ joinVIBI_plot <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%
   if(nrow(herbs1) == 0){stop(
     paste0(
     "The combination of function arguments returned an empty data frame.",
-    " Check that the combination of plotID and years have survey records, and that the plots you chose have 4 InternMods.")
+    " Check that the combination of plotID and years have survey records, and that the plots you chose have 4 IntensMods.")
     )}
 
   # Set wet status based on the column chosen, like in the macros code. Note that the macros
@@ -1091,7 +1091,7 @@ joinVIBI_plot <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%
                 "Avg_Bmass", "Biomass_Score", "VIBI_Score_State", "VIBI_Score_ACOEReg", "VIBI_Score_FQ",
                 "Avg_Plot_Cover")
 
- site_cols <- c("LocationID", "FeatureTypes", "FeatureID", "Park", "County", "TotalMods", "InternMods",
+ site_cols <- c("LocationID", "FeatureTypes", "FeatureID", "Park", "County", "TotalMods", "IntensMods",
                 "PlotConfig", "AreaHA", "SampleYear", "SampleDate", "EventID",
                 "DomVeg_Lev1", "DomVeg_Lev2", "DomVeg_Lev3",
                  "X1oPlants", "X1oHGM")
