@@ -49,7 +49,8 @@ h4{
 
 ```{r echo = F, include = F}
 print_head <- function(df){
-  knitr::kable(df[1:6,]) |> #, table.attr = "style='width:60%;'") |> 
+  max_row <- ifelse(nrow(df) > 6, 6, nrow(df))
+  knitr::kable(df[1:max_row,]) |> #, table.attr = "style='width:60%;'") |> 
     kableExtra::kable_classic(full_width = F, font_size = 12, 
                               bootstrap_options = c("condensed"))
 }
@@ -127,7 +128,8 @@ While this works, the better approach is to use the "getter" functions within th
 If you want to use the `print_head()` function that shows output in this markdown, run the code below. This makes the results print cleaner in the markdown report. For your purposes, you can just run: `head(dataframe)`.
 ```{r}
 print_head <- function(df){
-  knitr::kable(df[1:6,]) |> #, table.attr = "style='width:60%;'") |> 
+    max_row <- ifelse(nrow(df) > 6, 6, nrow(df))
+    knitr::kable(df[1:max_row,]) |> #, table.attr = "style='width:60%;'") |> 
     kableExtra::kable_classic(full_width = F, font_size = 12, 
                               bootstrap_options = c("condensed"))
 }
