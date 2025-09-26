@@ -98,6 +98,6 @@ getWoody <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%Y")),
 
   names(woody3)[names(woody3)]
 
-  return(woody3)
+  return(data.frame(woody3))
 }
 

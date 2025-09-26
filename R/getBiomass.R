@@ -84,5 +84,5 @@ getBiomass <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%Y")
 
   biomass2 <- biomass1[biomass1$SampleYear %in% years, ]
 
-  return(biomass2)
+  return(data.frame(biomass2))
 }

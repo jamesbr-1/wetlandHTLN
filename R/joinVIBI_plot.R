@@ -1078,7 +1078,8 @@ joinVIBI_plot <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%
  info_comb3 <- info_comb2[,c("LocationID", "FeatureID", "SampleYear", info_cols)]
 
  comb_dat <- full_join(vibi_comb3, info_comb3, by = c("LocationID", "FeatureID", "SampleYear")) |>
-   arrange(FeatureID, SampleYear)
+   arrange(FeatureID, SampleYear) |>
+   filter(!is.na(SampleYear))
 
  vibi_cols <- c("Num_Carex", "Carex_Score", "Num_Cyper", "Cyper_Score", "Num_Dicot", "Dicot_Score",
                 "Num_Shade", "Shade_Score", "Num_Shrub", "Shrub_Score", "Num_Shrub_reg", "Shrub_Score_reg",
@@ -1119,5 +1120,5 @@ joinVIBI_plot <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%
 
  final_dat <- comb_dat1 |> arrange(FeatureID, SampleYear)
 
- return(final_dat)
+ return(data.frame(final_dat))
 }

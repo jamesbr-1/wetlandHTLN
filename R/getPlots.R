@@ -93,6 +93,6 @@ getPlots <- function(plot_type = "VIBIplotID", survey_type = 'all', hgm_class = 
 
   plot6 <- plot5[plot5$IntensMods %in% intens_mods,]
 
-  return(plot6)
+  return(data.frame(plot6))
 }
 

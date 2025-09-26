@@ -98,6 +98,6 @@ getBigTrees <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%Y"
 
   names(bigtree3)[names(bigtree3)]
 
-  return(bigtree3)
+  return(data.frame(bigtree3))
 }
 

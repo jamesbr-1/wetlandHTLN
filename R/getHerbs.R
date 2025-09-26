@@ -98,6 +98,6 @@ getHerbs <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%Y")),
   herbs3 <- if(any(nativity == 'all')){herbs2
   } else {herbs2 |> dplyr::filter(OH_STATUS %in% nativity)}
 
-  return(herbs3)
+  return(data.frame(herbs3))
 }
 
