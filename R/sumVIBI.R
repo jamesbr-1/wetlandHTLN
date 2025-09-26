@@ -411,6 +411,24 @@ sumVIBI <- function(years = 2008:as.numeric(format(Sys.Date(), format = "%Y")),
   sum_vibi$CanopyIV_Score[sum_vibi$CanopyIV == 0] <- 0
   sum_vibi$CanopyIV_Score[!sum_vibi$DomVeg_Lev1 %in% "forest"] <- NA
 
-  return(sum_vibi)
+  vibi_score_cols <- c("Carex_Score", "Cyper_Score", "Dicot_Score", "Shade_Score",
+                       "Shrub_Score", "Hydro_Score", "SVP_Score", "AP_Score", "FQAI_Score",
+                       "Pct_Bryo_Score", "Pct_Hydro_Score", "Pct_Sens_Score", "Pct_Tol_Score",
+                       "Pct_InvGram_Score", "SmTree_Score", "SubcanIV_Score",
+                       "CanopyIV_Score", "Biomass_Score")
+
+  vibi_score_reg_cols <- c("Carex_Score", "Cyper_Score", "Dicot_Score", "Shade_Score",
+                           "Shrub_Score_reg", "Hydro_Score_reg", "SVP_Score", "AP_Score", "FQAI_Score",
+                           "Pct_Bryo_Score", "Pct_Hydro_Score_reg", "Pct_Sens_Score", "Pct_Tol_Score",
+                           "Pct_InvGram_Score", "SmTree_Score", "SubcanIV_Score",
+                           "CanopyIV_Score", "Biomass_Score")
+
+  vibi_fq_scores <- c("FQAI_Score_FQ", "Cov_Wt_C_Score_FQ")
+
+  sum_vibi$VIBI_Score_State <- rowSums(sum_vibi[,vibi_score_cols], na.rm = T)
+  sum_vibi$VIBI_Score_ACOEReg <- rowSums(sum_vibi[,vibi_score_reg_cols], na.rm = T)
+  sum_vibi$VIBI_Score_FQ <- rowSums(sum_vibi[,vibi_fq_scores], na.rm = T)
+
+  return(data.frame(sum_vibi))
 
   }
